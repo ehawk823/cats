@@ -1,0 +1,22 @@
+<div class = "cat">
+  Create a New Cat
+</div>
+
+<div class="cats">
+  <% @cats.each do |cat| %>
+    <%= cat.name %>, <%= cat.age %>
+    <br>
+  <% end %>
+</div>
+
+<div class="form">
+  <%= form_for(@cat, :html => {:class => 'formal'}, remote: true) do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :age %>:
+  <%= f.text_field :age %><br />
+
+  <%= f.submit %>
+  <% end %>
+</div>
